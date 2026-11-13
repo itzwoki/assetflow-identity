@@ -1,0 +1,35 @@
+[project]
+name = "assetflow-identity"
+version = "0.1.0"
+description = "Identity and access management service for AssetFlow."
+readme = "README.md"
+authors = [
+    { name = "itzwoki", email = "waqas.muhammad.office@gmail.com" }
+]
+requires-python = ">=3.14,<3.15"
+dependencies = [
+    "fastapi>=0.162.5",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.13.8,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.17.5",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
